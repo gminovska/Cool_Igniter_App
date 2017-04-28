@@ -1,10 +1,10 @@
 <?php
 class Pics_model extends CI_Model {
 
-    public function get_pics($tags = "kittens", $perPage = 25)
+    public function get_pics($tags = "kittens")
 {
     $api_key = $this->config->item('flickr_api');
-    
+    $perPage = 25;
     $url = 'https://api.flickr.com/services/rest/?method=flickr.photos.search';
     $url.= '&api_key=' . $api_key;
     $url.= '&tags=' . $tags;
