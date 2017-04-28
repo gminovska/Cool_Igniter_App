@@ -11,6 +11,9 @@ class Pics extends CI_Controller {
         
 public function view($slug = "kittens")
 {
+        if($_GET["tag"]) {
+                $slug = str_replace(" ", "," ,$_GET["tag"]);
+        }
         $data['title'] = $slug;
         $response = $this->pics_model->get_pics($slug); 
         $data['pics'] = $response->photos->photo;

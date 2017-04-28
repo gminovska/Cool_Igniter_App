@@ -25,3 +25,8 @@
 a h3 {
 	text-align: center;
 }
+
+.img_search {
+	text-align: right;
+    margin-top: 20px;
+}
