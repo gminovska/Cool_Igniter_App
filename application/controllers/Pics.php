@@ -19,14 +19,12 @@ public function view($slug = "kittens")
         {
                 show_404();
         }
-        $this->load->view('pics/index', $data);
+        $this->load->view('pics/view', $data);
 }
 
         public function index()
 {   
-        $data['title'] = 'Cute Pics';        
-        $response = $this->pics_model->get_pics();      
-        $data['pics'] = $response->photos->photo;        
+        $data['title'] = 'awesome';                
         $this->load->view('pics/index', $data);
 }
 }
