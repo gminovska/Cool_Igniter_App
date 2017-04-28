@@ -1,7 +1,7 @@
 <?php
 $this->load->view($this->config->item('theme') . 'header');
 ?>
-<h2><?php echo $title; ?></h2>
+<h2>So, you wanna see some <?php echo $title; ?> photos?</h2>
 <?php
 foreach($pics as $pic){
 
