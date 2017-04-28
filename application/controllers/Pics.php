@@ -9,34 +9,24 @@ class Pics extends CI_Controller {
         }
 
         
-// public function view($slug = NULL)
-// {
-//         $data['news_item'] = $this->news_model->get_news($slug);
-
-//         if (empty($data['news_item']))
-//         {
-//                 show_404();
-//         }
-
-//         $data['title'] = $data['news_item']['title'];
-
-//         // $this->load->view('templates/header', $data);
-//         $this->load->view('news/view', $data);
-//         // $this->load->view('templates/footer');
-// }
+public function view($slug = "kittens")
+{
+        $data['title'] = $slug;
+        $response = $this->pics_model->get_pics($slug); 
+        $data['pics'] = $response->photos->photo;
+        
+        if (empty($data['pics']))
+        {
+                show_404();
+        }
+        $this->load->view('pics/index', $data);
+}
 
         public function index()
-{
-        
-        $data['title'] = 'Cute Pics';
-        
-        $response = $this->pics_model->get_pics();
-        
-        $data['pics'] = $response->photos->photo;
-         
-
-        // $this->load->view('templates/header', $data);
+{   
+        $data['title'] = 'Cute Pics';        
+        $response = $this->pics_model->get_pics();      
+        $data['pics'] = $response->photos->photo;        
         $this->load->view('pics/index', $data);
-        // $this->load->view('templates/footer');
 }
 }
